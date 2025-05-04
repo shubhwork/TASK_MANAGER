@@ -4,17 +4,15 @@ import com.todo.task_manager.entity.Category;
 import com.todo.task_manager.entity.TaskManager;
 import com.todo.task_manager.entity.TaskStatus;
 import com.todo.task_manager.repository.TaskManagerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.config.Task;
 import org.springframework.stereotype.Service;
 import com.todo.task_manager.repository.CategoryRepository;
 
 import java.util.List;
 @Service
-public class TaskServiceImpl implements TaskManagerService{
+public class TaskManagerServiceImpl implements TaskManagerService{
     private final TaskManagerRepository taskManagerRepository;
     private final CategoryRepository categoryRepository;
-    public TaskServiceImpl(TaskManagerRepository taskManagerRepository, CategoryRepository categoryRepository){
+    public TaskManagerServiceImpl(TaskManagerRepository taskManagerRepository, CategoryRepository categoryRepository){
         this.taskManagerRepository = taskManagerRepository;
         this.categoryRepository=categoryRepository;
     }

@@ -7,13 +7,20 @@ import lombok.*;
 @Table(name="TASK_MANAGER")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
 public class TaskManager {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    public TaskManager(Long id, String title, String description, TaskStatus status, Category category) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.status = status;
+        this.category = category;
+    }
 
     private String title;
     private String description;

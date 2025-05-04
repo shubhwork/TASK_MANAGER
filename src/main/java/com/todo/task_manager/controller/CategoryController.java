@@ -3,8 +3,6 @@ package com.todo.task_manager.controller;
 import com.todo.task_manager.entity.Category;
 import com.todo.task_manager.service.CategoryService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class CategoryController {
-    @Autowired
     private CategoryService categoryService;
 
     @GetMapping
@@ -36,7 +33,7 @@ public class CategoryController {
         }
     }
     @PutMapping("/{id}/priority")
-    public Category updateCategoryPriority(@PathVariable int id, @RequestParam int priority){
+    public Category updateCategoryPriority(@PathVariable Long id, @RequestParam int priority){
         try{
         return categoryService.updateCategoryPriority(id,priority);
     }
