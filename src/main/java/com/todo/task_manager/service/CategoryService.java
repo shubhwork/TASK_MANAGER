@@ -8,4 +8,6 @@ import java.util.List;
 public interface CategoryService {
     List<Category> getAllCategories();
     Category createCategory(Category category);
+    Category updateCategoryPriority(int id,int priority);
+    Category updateCategoryName(int id,String name);
 }

@@ -17,6 +17,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
+    private int priority;
 
     public long getId() {
         return id;

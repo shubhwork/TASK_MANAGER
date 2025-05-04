@@ -35,4 +35,14 @@ public class CategoryController {
             throw new RuntimeException("Error creating category: "+e.getMessage());
         }
     }
+    @PutMapping("/{id}/priority")
+    public Category updateCategoryPriority(@PathVariable int id, @RequestParam int priority){
+        try{
+        return categoryService.updateCategoryPriority(id,priority);
+    }
+        catch(RuntimeException e){
+            throw new RuntimeException("Error updating category priority: "+e.getMessage());
+        }
+
+    }
 }
